@@ -5,7 +5,7 @@ description      "Installs/Configures jboss"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.14"
 
-%w{ maven sudo logrotate }.each do |cb|
+%w{ user sudo maven logrotate }.each do |cb|
   depends cb
 end
 
