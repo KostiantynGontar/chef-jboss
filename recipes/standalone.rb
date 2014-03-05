@@ -22,7 +22,7 @@ ark 'jboss' do
   url  node['jboss']['url']
   checksum node['jboss']['checksum']
   home_dir "/usr/local/#{jboss_user}"
-  version "7.1.0"
+  version node['jboss']['version']
   owner jboss_user
 end
 
