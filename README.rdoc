@@ -10,20 +10,20 @@ The default recipe installs
 
 = REQUIREMENTS:
 
-java 1.6
+java
+ark
 
-= ATTRIBUTES:
+ATTRIBUTES:
 
-* default['jboss']['jboss_home']  default location for jboss
-* default['jboss']['version'] default version to download
-* default['jboss']['dl_url'] download url
-* default['jboss']['jboss_user'] default jboss user
+* default['jboss']['dir']  parent directory for jboss
+* default['jboss']['url'] download url
+* default['jboss']['user'] default jboss user
+* default['jboss']['app'] default jboss name
 
 
 = USAGE:
 
 Accept 
 
-Author: Bryan W. Berry <bryan.berry@gmail.com>
-Copyright: 2012 Food and Agriculture Organization of the United Nations
+Author: Kostiantyn Gontar <kostiantyn_gontar@epam.com>
 License: Apache v2.0
