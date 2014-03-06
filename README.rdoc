@@ -13,7 +13,7 @@ The default recipe installs
 java
 ark
 
-ATTRIBUTES:
+= ATTRIBUTES:
 
 * default['jboss']['dir']  parent directory for jboss
 * default['jboss']['url'] download url

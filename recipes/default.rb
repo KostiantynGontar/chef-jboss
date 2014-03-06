@@ -1,14 +1,14 @@
-jboss_home = node['jboss']['dir'] + node['jboss']['app']
+jboss_home = "#{node['jboss']['dir']}/#{node['jboss']['app']}"
+jboss_version = File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1]
 
 user node['jboss']['user']
 
 ark 'jboss' do
   url  node['jboss']['url']
   checksum node['jboss']['checksum']
-  home_dir "#{jboss_home}"
-#  version node['jboss']['version']
+  home_dir jboss_home
+  version jboss_version
   owner node['jboss']['user']
-  group node['jboss']['user']
 end
 
 # template environment variables used by init file

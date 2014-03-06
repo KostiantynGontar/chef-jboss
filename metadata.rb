@@ -1,3 +1,4 @@
+name             "jboss"
 maintainer       "Kostiantyn Gontar"
 maintainer_email "kostiantyn_gontar@epam.com"
 license          "Apache v2.0"
