@@ -23,6 +23,6 @@ link "/etc/init.d/#{node['jboss']['app']}" do
 end
 
 # start service
-service jboss_user do
+service node['jboss']['app'] do
   action [ :enable, :start ]
 end
