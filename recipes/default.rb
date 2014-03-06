@@ -18,7 +18,7 @@ end
 #end
 
 # link init file
-template "/etc/init.d/#{node['jboss']['app']}" do
+link "/etc/init.d/#{node['jboss']['app']}" do
   to "#{jboss_home}/bin/standalone.sh"
 end
 
