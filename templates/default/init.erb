@@ -1,0 +1,22 @@
+#!/bin/sh
+[ -r /etc/profile.d/java.sh ] && . /etc/profile.d/java.sh
+[ -r /etc/profile.d/jboss.sh ] && . /etc/profile.d/jboss.sh
+
+case "$1" in
+    start)
+        echo "Starting JBoss AS <%=  File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1] %>"
+        sudo -u jboss sh ${JBOSS_HOME}/bin/standalone.sh
+    ;;
+    stop)
+        echo "Stopping JBoss AS <%=  File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1] %>"
+        sudo -u jboss sh ${JBOSS_HOME}/bin/jboss-admin.sh --connect
+    command=:shutdown
+    ;;
+    *)
+        echo "Usage: /etc/init.d/jboss {start|stop}"
+        exit 1
+    ;;
+esac
+
+exit 0
+

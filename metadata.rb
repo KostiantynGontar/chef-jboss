@@ -6,7 +6,7 @@ description      "Installs/Configures jboss"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 
-%w{ ark maven }.each do |cb|
+%w{ ark java }.each do |cb|
   depends cb
 end
 
