@@ -23,6 +23,7 @@ suites:
     run_list:
       - recipe[java]
       - recipe[jboss]
+      - recipe[minitest-handler]
     attributes:
       java:
         jdk_version: "7"

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require '../spec_helper'
 
 describe user('jboss') do
     it { should exist }
@@ -20,6 +20,7 @@ describe file('/etc/profile.d/jboss.sh') do
     it { should be_grouped_into 'root' }
     it { should contain '/opt/jboss' }
     it { should contain 'jboss' }
+end
 
 describe file('/opt/jboss/bin/standalone.conf') do
     it { should be_file }
