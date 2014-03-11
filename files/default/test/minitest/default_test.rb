@@ -21,7 +21,7 @@ describe_recipe 'jboss::default' do
       file("/etc/profile.d/jboss.sh").must_include 'jboss'
     end
     it "create conf file" do
-      file("/opt/jboss/bin/standalone.conf").must_have(:mode,"755").with(:owner,"jboss").and(:group,"jboss")
+      file("/opt/jboss/bin/standalone.conf").must_have(:mode,"644").with(:owner,"jboss").and(:group,"jboss")
       file("/opt/jboss/bin/standalone.conf").must_include '0.0.0.0'
     end
   end
