@@ -1,4 +1,5 @@
-jboss_home = "#{node['jboss']['dir']}/#{node['jboss']['app']}"
+#jboss_home = "#{node['jboss']['dir']}/#{node['jboss']['app']}"
+jboss_home = node['jboss']['dir']<<'/'<<node['jboss']['app']
 jboss_version = File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1]
 
 user node['jboss']['user']
