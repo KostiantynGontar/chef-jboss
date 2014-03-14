@@ -1,6 +1,6 @@
 #jboss_home = "#{node['jboss']['dir']}/#{node['jboss']['app']}"
-jboss_home = node['jboss']['dir']<<'/'<<node['jboss']['app']
-jboss_version = File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1]
+#jboss_home = node['jboss']['dir']<<'/'<<node['jboss']['app']
+#jboss_version = File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1]
 
 user node['jboss']['user']
 group node['jboss']['user']
@@ -8,8 +8,8 @@ group node['jboss']['user']
 ark 'jboss' do
   url  node['jboss']['url']
   checksum node['jboss']['checksum']
-  home_dir jboss_home
-  version jboss_version
+  home_dir node['jboss']['home']
+  version node['jboss']['version']
   owner node['jboss']['user']
   group node['jboss']['user']
 end
@@ -20,7 +20,7 @@ template "/etc/profile.d/#{node['jboss']['app']}.sh" do
   mode 0755
 end
 
-template "#{jboss_home}/bin/standalone.conf" do
+template "#{node['jboss']['home']}/bin/standalone.conf" do
   source "standalone.conf.erb"
   mode 0644
   owner node['jboss']['user']

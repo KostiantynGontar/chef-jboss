@@ -4,3 +4,6 @@ default['jboss']['checksum'] = "88fd3fdac4f7951cee3396eff3d70e8166c3319de82d7737
 default['jboss']['user'] = "jboss"
 default['jboss']['app'] = 'jboss'
 default['jboss']['bind'] = '0.0.0.0'
+
+default['jboss']['home'] = "#{node['jboss']['dir']}/#{node['jboss']['app']}"
+default['jboss']['version'] = "#{File.basename(node['jboss']['url'],".Final.tar.gz").split('-')[-1]}"
